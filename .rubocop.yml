@@ -8,6 +8,8 @@ AllCops:
 Metrics/BlockLength:
   Exclude:
     - "config/environments/*.rb"
+    - "spec/services/*.rb"
+    - "spec/models/*.rb"
 
 Style/Documentation:
   Enabled: false
