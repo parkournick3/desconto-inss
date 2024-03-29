@@ -11,5 +11,14 @@ class Proponent < ApplicationRecord
   validates :phone_number, presence: true
   validates :gross_salary, presence: true
 
-  scope :ordered, -> { order(:name) }
+  after_create_commit :enqueue_calculate_net_salary_job
+  after_save :enqueue_calculate_net_salary_job, if: lambda {
+                                                      saved_change_to_inss_discount? || saved_change_to_gross_salary?
+                                                    }
+
+  def enqueue_calculate_net_salary_job
+    CalculateNetSalaryJob.perform_later(id)
+  end
+
+  scope :ordered, -> { order('updated_at DESC') }
 end
