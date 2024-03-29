@@ -2,7 +2,7 @@
 
 class Proponent < ApplicationRecord
   validates :name, presence: true
-  validates :cpf, presence: true
+  validates :cpf, presence: true, uniqueness: true
   validates :street_name, presence: true
   validates :house_number, presence: true
   validates :neighborhood, presence: true
