@@ -1,5 +1,6 @@
 <%= form_with(model: proponent, id: dom_id(proponent, "form"), local: true) do |form| %>
-  <div class="container">
+  <%= puts "#{proponent.gross_salary}"%>
+  <div class="container" data-controller="proponents" data-proponents-gross-salary-value="<%= "#{proponent.gross_salary}"%>" >
     <div class="row mb-3">
       <h4>Informações Básicas</h4>
       <div class="col-md-4 mb-3" style="min-width: 300px;">
@@ -50,11 +51,11 @@
       <h4>Salário</h4>
       <div class="col-md-4 mb-3" style="min-width: 280px;">
         <%= form.label 'Salário Bruto', class: "form-label" %>
-        <%= form.text_field :gross_salary, class: "form-control", required: true %>
+        <%= form.text_field :gross_salary, class: "form-control", required: true, data: { action: "input->proponents#calculateInssDiscountDebounced" } %>
       </div>
       <div class="col-md-4 mb-3" style="min-width: 280px;">
         <%= form.label 'Desconto INSS', class: "form-label" %>
-        <%= form.text_field :inss_discount, class: "form-control", disabled: true,  readonly: true%>
+        <%= form.text_field :inss_discount, 'data-proponents-target': "inssDiscount", class: "form-control",  readonly: true, required: true%>
       </div>
     </div>
   </div>

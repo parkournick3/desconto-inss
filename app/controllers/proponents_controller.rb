@@ -52,6 +52,14 @@ class ProponentsController < ApplicationController
     end
   end
 
+  def calculate_inss_discount
+    gross_salary = params[:gross_salary].to_f
+
+    inss_discount = CalculateInssDiscountService.new(gross_salary:).calculate[:discount]
+
+    render json: { inss_discount: }
+  end
+
   private
 
   def set_proponent

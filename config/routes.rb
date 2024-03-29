@@ -3,6 +3,12 @@
 Rails.application.routes.draw do
   resources :proponents
 
+  scope 'api' do
+    scope 'proponents' do
+      post 'calculate_inss_discount', to: 'proponents#calculate_inss_discount'
+    end
+  end
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

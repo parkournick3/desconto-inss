@@ -15,10 +15,12 @@
     "autoprefixer": "^10.4.19",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "lodash": "^4.17.21",
     "nodemon": "^3.1.0",
     "postcss": "^8.4.38",
     "postcss-cli": "^11.0.0",
-    "sass": "^1.72.0"
+    "sass": "^1.72.0",
+    "stimulus": "^3.2.2"
   },
   "browserslist": [
     "defaults"
