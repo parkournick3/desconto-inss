@@ -5,7 +5,7 @@ class ProponentsController < ApplicationController
   before_action :set_proponent, only: %i[show edit update destroy]
 
   def index
-    @proponents = Proponent.all
+    @proponents = Proponent.page(params[:page]).ordered
   end
 
   def show; end
