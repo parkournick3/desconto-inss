@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_29_104310) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_29_191914) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,10 +23,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_29_104310) do
     t.string "city", null: false
     t.string "state", null: false
     t.string "phone_number", null: false
-    t.float "salary", null: false
+    t.float "gross_salary", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "inss_discount"
+    t.float "net_salary"
   end
 
 end

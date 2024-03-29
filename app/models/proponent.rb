@@ -9,7 +9,7 @@ class Proponent < ApplicationRecord
   validates :city, presence: true
   validates :state, presence: true
   validates :phone_number, presence: true
-  validates :salary, presence: true
+  validates :gross_salary, presence: true
 
   scope :ordered, -> { order(:name) }
 end

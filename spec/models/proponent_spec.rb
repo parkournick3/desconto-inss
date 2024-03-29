@@ -13,7 +13,7 @@ RSpec.describe Proponent, type: :model do
       city: 'Metropolis',
       state: 'NY',
       phone_number: '123456789',
-      salary: 1000
+      gross_salary: 1000
     )
     expect(proponent).to be_valid
   end
@@ -28,7 +28,7 @@ RSpec.describe Proponent, type: :model do
       city: 'Metropolis',
       state: 'NY',
       phone_number: '123456789',
-      salary: 1000
+      gross_salary: 1000
     )
     proponent.update(name: 'Jane Doe')
     expect(proponent.name).to eq('Jane Doe')
@@ -44,7 +44,7 @@ RSpec.describe Proponent, type: :model do
       city: 'Metropolis',
       state: 'NY',
       phone_number: '123456789',
-      salary: 1000
+      gross_salary: 1000
     )
     proponent.destroy
     expect(Proponent.count).to eq(0)

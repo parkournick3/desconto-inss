@@ -4,9 +4,9 @@
     <td><%= proponent.name %></td>
     <td><%= proponent.cpf %></td>
     <td><%= proponent_address(proponent) %></td>
-    <td><%= number_to_currency(proponent.salary) %></td>
-    <td><%= number_to_currency(proponent.salary) %></td>
-    <td><%= number_to_currency(proponent.salary) %></td>
+    <td><%= number_to_currency(proponent.gross_salary) %></td>
+    <td><%= number_to_currency(proponent.inss_discount) %></td>
+    <td><%= number_to_currency(proponent.net_salary) %></td>
     <td class="d-flex gap-2">
       <%= button_to proponent_path(proponent), class: "btn btn-danger btn-sm", method: :delete do %>
         <span class="sr-only">Excluir</span>

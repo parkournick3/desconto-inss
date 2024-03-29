@@ -1,7 +1,7 @@
 <%= form_with(model: proponent, id: dom_id(proponent, "form"), local: true) do |form| %>
   <div class="container">
     <div class="row mb-3">
-      <h2>Informações Básicas</h2>
+      <h4>Informações Básicas</h4>
       <div class="col-md-4 mb-3" style="min-width: 300px;">
         <%= form.label :nome, class: "form-label" %>
         <%= form.text_field :name, class: "form-control", required: true %>
@@ -19,7 +19,7 @@
     </div>
 
     <div class="row mb-3">
-      <h2>Endereço</h2>
+      <h4>Endereço</h4>
       <div class="col-md-4 mb-3" style="min-width: 280px;">
         <%= form.label 'Nome da rua', class: "form-label" %>
         <%= form.text_field :street_name, class: "form-control", required: true %>
@@ -47,10 +47,14 @@
     </div>
 
     <div class="row mb-3">
-      <h2>Salário</h2>
+      <h4>Salário</h4>
       <div class="col-md-4 mb-3" style="min-width: 280px;">
-        <%= form.label 'Salário', class: "form-label" %>
-        <%= form.text_field :salary, class: "form-control", required: true %>
+        <%= form.label 'Salário Bruto', class: "form-label" %>
+        <%= form.text_field :gross_salary, class: "form-control", required: true %>
+      </div>
+      <div class="col-md-4 mb-3" style="min-width: 280px;">
+        <%= form.label 'Desconto INSS', class: "form-label" %>
+        <%= form.text_field :inss_discount, class: "form-control", disabled: true,  readonly: true%>
       </div>
     </div>
   </div>

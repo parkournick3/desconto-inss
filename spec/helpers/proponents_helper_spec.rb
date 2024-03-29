@@ -13,5 +13,14 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe ProponentsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'returns address' do
+    proponent = Proponent.new(
+      street_name: 'Main Street',
+      house_number: 123,
+      neighborhood: 'Downtown',
+      city: 'Metropolis',
+      state: 'NY'
+    )
+    expect(helper.proponent_address(proponent)).to eq('Downtown Main Street, 123, Metropolis - NY')
+  end
 end

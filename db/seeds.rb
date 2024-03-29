@@ -3,6 +3,11 @@
 require 'faker'
 
 10.times do
+  gross_salary = Faker::Number.number(digits: 4)
+  salary_calcs = CalculateInssDiscountService.new(gross_salary:).calculate
+  inss_discount = salary_calcs[:discount]
+  net_salary = salary_calcs[:net_salary]
+
   Proponent.create(
     name: Faker::Name.name,
     cpf: Faker::Number.number(digits: 11),
@@ -12,7 +17,9 @@ require 'faker'
     city: Faker::Address.city,
     state: Faker::Address.state,
     phone_number: Faker::PhoneNumber.phone_number,
-    salary: Faker::Number.number(digits: 4)
+    gross_salary:,
+    inss_discount:,
+    net_salary:
   )
 end
 

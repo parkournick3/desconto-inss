@@ -2,7 +2,7 @@
 
 class CalculateInssDiscountService
   def initialize(params = {})
-    @salary = params[:salary]
+    @gross_salary = params[:gross_salary]
   end
 
   INSS_TABLE = {
@@ -16,11 +16,14 @@ class CalculateInssDiscountService
 
   def calculate
     aliquot = INSS_TABLE[:tracks].find do |track|
-      @salary <= track[:limit]
+      @gross_salary <= track[:limit]
     end
 
-    return 0 if @salary > INSS_TABLE[:tracks].last[:limit]
+    return { discount: 0, net_salary: @gross_salary } unless aliquot
 
-    ((@salary * aliquot[:aliquot]) - aliquot[:deduction]).round(2)
+    discount = ((@gross_salary * aliquot[:aliquot]) - aliquot[:deduction]).round(2)
+    net_salary = (@gross_salary - discount).round(2)
+
+    { discount:, net_salary: }
   end
 end
