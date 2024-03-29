@@ -11,5 +11,8 @@ Metrics/BlockLength:
     - "spec/services/*.rb"
     - "spec/models/*.rb"
 
+Metrics/MethodLength:
+  Max: 20
+
 Style/Documentation:
   Enabled: false
