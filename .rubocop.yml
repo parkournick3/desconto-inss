@@ -1,0 +1,13 @@
+AllCops:
+  NewCops: enable
+  Exclude:
+    - "db/schema.rb"
+    - "bin/*"
+    - "db/migrate/*"
+
+Metrics/BlockLength:
+  Exclude:
+    - "config/environments/*.rb"
+
+Style/Documentation:
+  Enabled: false
