@@ -37,9 +37,10 @@ class ProponentsController < ApplicationController
   def update
     if @proponent.update(proponent_params)
       flash.now[:notice] = 'Proponent was successfully updated.'
-      render turbo_stream: [
-        turbo_stream.replace(@proponent, @proponent)
-      ]
+      respond_to do |format|
+        format.html { render :edit, notice: 'Proponent was successfully updated.' }
+        format.json { render :show, status: :ok, location: @proponent }
+      end
     else
       render :edit, status: :unprocessable_entity
     end

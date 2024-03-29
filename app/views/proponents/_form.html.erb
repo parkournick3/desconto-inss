@@ -1,0 +1,62 @@
+<%= form_with(model: proponent, id: dom_id(proponent, "form"), local: true) do |form| %>
+  <div class="container">
+    <div class="row mb-3">
+      <h2>Informações Básicas</h2>
+      <div class="col-md-4 mb-3" style="min-width: 300px;">
+        <%= form.label :nome, class: "form-label" %>
+        <%= form.text_field :name, class: "form-control", required: true %>
+      </div>
+
+      <div class="col-md-4 mb-3" style="min-width: 300px;">
+        <%= form.label 'CPF', class: "form-label text-uppercase" %>
+        <%= form.text_field :cpf, class: "form-control", required: true %>
+      </div>
+
+      <div class="col-md-4 mb-3" style="min-width: 300px;">
+        <%= form.label 'Número de telefone ou celular', class: "form-label" %>
+        <%= form.text_field :phone_number, class: "form-control", required: true %>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <h2>Endereço</h2>
+      <div class="col-md-4 mb-3" style="min-width: 280px;">
+        <%= form.label 'Nome da rua', class: "form-label" %>
+        <%= form.text_field :street_name, class: "form-control", required: true %>
+      </div>
+
+      <div class="col-md-4 mb-3" style="min-width: 280px;">
+        <%= form.label 'Número da residência', class: "form-label" %>
+        <%= form.text_field :house_number, class: "form-control", required: true %>
+      </div>
+
+      <div class="col-md-4 mb-3" style="min-width: 280px;">
+        <%= form.label 'Bairro', class: "form-label" %>
+        <%= form.text_field :neighborhood, class: "form-control", required: true %>
+      </div>
+
+      <div class="col-md-4 mb-3" style="min-width: 280px;">
+        <%= form.label 'Cidade', class: "form-label" %>
+        <%= form.text_field :city, class: "form-control", required: true %>
+      </div>
+
+      <div class="col-md-4 mb-3" style="min-width: 280px;">
+        <%= form.label 'Estado', class: "form-label" %>
+        <%= form.text_field :state, class: "form-control", required: true %>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <h2>Salário</h2>
+      <div class="col-md-4 mb-3" style="min-width: 280px;">
+        <%= form.label 'Salário', class: "form-label" %>
+        <%= form.text_field :salary, class: "form-control", required: true %>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex gap-2 justify-content-end">
+    <a href="<%= "#{proponents_path}"%>" data-turbo="false" class="btn btn-secondary">Voltar</a>
+    <%= form.submit "Salvar", class: "btn btn-primary" %>
+  </div>
+<% end %>
