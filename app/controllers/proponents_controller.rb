@@ -21,14 +21,10 @@ class ProponentsController < ApplicationController
 
     if @proponent.save
       flash.now[:notice] = 'Proponent was successfully created.'
-      render turbo_stream: [
-        turbo_stream.prepend('proponents', @proponent),
-        turbo_stream.replace(
-          'form_proponent',
-          partial: 'form',
-          locals: { proponent: Proponent.new }
-        )
-      ]
+      respond_to do |format|
+        format.html { redirect_to proponents_url, notice: 'Proponent was successfully created.' }
+        format.json { render :show, status: :created, location: @proponent }
+      end
     else
       render :new, status: :unprocessable_entity
     end
@@ -38,7 +34,7 @@ class ProponentsController < ApplicationController
     if @proponent.update(proponent_params)
       flash.now[:notice] = 'Proponent was successfully updated.'
       respond_to do |format|
-        format.html { render :edit, notice: 'Proponent was successfully updated.' }
+        format.html { redirect_to proponents_url, notice: 'Proponent was successfully updated.' }
         format.json { render :show, status: :ok, location: @proponent }
       end
     else
@@ -63,6 +59,7 @@ class ProponentsController < ApplicationController
   end
 
   def proponent_params
-    params.require(:proponent).permit(:name)
+    params.require(:proponent).permit(:name, :cpf, :street_name, :house_number, :neighborhood, :city, :state,
+                                      :phone_number, :salary)
   end
 end
