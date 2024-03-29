@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'dashboard/index'
   resources :proponents
+
+  get '/dashboard', to: 'dashboard#index'
 
   scope 'api' do
     scope 'proponents' do

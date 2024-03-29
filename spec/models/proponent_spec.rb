@@ -49,4 +49,22 @@ RSpec.describe Proponent, type: :model do
     proponent.destroy
     expect(Proponent.count).to eq(0)
   end
+
+  describe '#salary_range' do
+    it 'returns the salary range 1000' do
+      proponent = Proponent.new(gross_salary: 1000)
+      # 1412.0
+      expect(proponent.salary_range).to eq('até R$ 1412.0')
+    end
+
+    it 'returns the salary range 4005' do
+      proponent = Proponent.new(gross_salary: 4005)
+      expect(proponent.salary_range).to eq('de R$ 4000.03 até R$ 7786.02')
+    end
+
+    it 'returns the salary range 10_000' do
+      proponent = Proponent.new(gross_salary: 10_000)
+      expect(proponent.salary_range).to eq('mais de R$ 7786.02')
+    end
+  end
 end

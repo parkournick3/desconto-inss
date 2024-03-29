@@ -1,0 +1,20 @@
+<div class="w-100">
+  <h1 class="fs-5">Relatório</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Faixa Salarial</th>
+        <th scope="col">Quantidade de Proponentes</th>
+      </tr>
+    </thead>
+    <tbody id="dashboard">
+      <% @proponents_by_salary_range.each do |salary_range, count| %>
+        <tr>
+          <td><%= salary_range %></td>
+          <td><%= count %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
