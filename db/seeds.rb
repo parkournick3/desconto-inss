@@ -1,5 +1,21 @@
 # frozen_string_literal: true
 
+require 'faker'
+
+10.times do
+  Proponent.create(
+    name: Faker::Name.name,
+    cpf: Faker::Number.number(digits: 11),
+    street_name: Faker::Address.street_name,
+    house_number: Faker::Number.number(digits: 3),
+    neighborhood: Faker::Address.community,
+    city: Faker::Address.city,
+    state: Faker::Address.state,
+    phone_number: Faker::PhoneNumber.phone_number,
+    salary: Faker::Number.number(digits: 4)
+  )
+end
+
 # This file should ensure the existence of records required to run the application in every environment (production,
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
