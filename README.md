@@ -52,7 +52,7 @@ bundle install
 rails db:prepare
 
 # 3 - Para executar o servidor
-rails s
+./bin/dev
 
 # 4 - Em outro terminal execute o sidekiq
 bundle exec sidekiq

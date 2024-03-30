@@ -20,8 +20,6 @@ class Proponent < ApplicationRecord
                                                       saved_change_to_inss_discount? || saved_change_to_gross_salary?
                                                     }
 
-  scope :ordered, -> { order('updated_at DESC') }
-
   def enqueue_calculate_net_salary_job
     CalculateNetSalaryJob.perform_later(id)
   end

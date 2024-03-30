@@ -1,4 +1,12 @@
 pt-BR:
+  number:
+    currency:
+      format:
+        delimiter: "."
+        separator: ","
+        precision: 2
+        unit: "R$"
+        format: "%u %n"
   views:
     pagination:
       first: "&laquo; Primeira página"

@@ -8,13 +8,13 @@
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nome</th>
+        <th scope="col" class="link-without-color"><%= link_to "#", sort: "id"%></th>
+        <th scope="col" class="link-without-color"><%= link_to "Nome", sort: "name"%></th>
         <th scope="col">CPF</th>
         <th scope="col">Endereço</th>
-        <th scope="col">Salário bruto</th>
-        <th scope="col">Desconto INSS</th>
-        <th scope="col">Salário líquido</th>
+        <th scope="col" class="link-without-color"><%= link_to "Salário bruto", sort: "gross_salary" %></th>
+        <th scope="col" class="link-without-color"><%= link_to "Desconto INSS", sort: "inss_discount"%></th>
+        <th scope="col" class="link-without-color"><%= link_to "Salário líquido", sort: "net_salary"%></th>
         <th scope="col"></th>
       </tr>
     </thead>
