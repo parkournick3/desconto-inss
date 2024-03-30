@@ -2,6 +2,10 @@
 
 ![Ruby Tests](https://github.com/parkournick3/desconto-inss/actions/workflows/ruby.yml/badge.svg)
 
+![image](https://github.com/parkournick3/desconto-inss/assets/131922314/4898f49a-f121-4716-bb9c-1455a5f6d2de)
+
+![Fonte do cálculo](https://www.gov.br/inss/pt-br/assuntos/confira-as-aliquotas-de-contribuicao-ao-inss-com-o-aumento-do-salario-minimo)
+
 ## Funcionalidades principais
 
 - CRUD Proponentes.
