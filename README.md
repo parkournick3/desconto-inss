@@ -53,6 +53,8 @@ bundle exec sidekiq
 - Docker
 - Docker Compose
 
+#### Comandos
+
 ```bash
 # 1 - Execute o postgres, api, redis e sidekiq
 docker compose up
