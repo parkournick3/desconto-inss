@@ -4,24 +4,36 @@
 
 ![image](https://github.com/parkournick3/desconto-inss/assets/131922314/4898f49a-f121-4716-bb9c-1455a5f6d2de)
 
-![Fonte do cálculo](https://www.gov.br/inss/pt-br/assuntos/confira-as-aliquotas-de-contribuicao-ao-inss-com-o-aumento-do-salario-minimo)
+1. [Principais funcionalidades](https://github.com/parkournick3/desconto-inss/edit/main/README.md#comandos-1)
+2. [Live Preview](https://github.com/parkournick3/desconto-inss/edit/main/README.md#point_down-live-preview-point_down)
+3. [Como rodar localmente ( com e sem docker )](https://github.com/parkournick3/desconto-inss/edit/main/README.md#octocat-como-executar-localmente-octocat)
+4. [Deployment](https://github.com/parkournick3/desconto-inss/edit/main/README.md#cloud-deployment-cloud)
+5. [Preview](https://github.com/parkournick3/desconto-inss/edit/main/README.md#camera-preview-camera)
+6. ![Fonte do cálculo](https://www.gov.br/inss/pt-br/assuntos/confira-as-aliquotas-de-contribuicao-ao-inss-com-o-aumento-do-salario-minimo)
 
-## Funcionalidades principais
+## :point_down: Funcionalidades principais :point_down:
 
-- CRUD Proponentes.
-- Desconto do INSS calculado automaticamente.
-- Salário Líquido calculado automaticamente de forma assincrona.
-- Relatório de proponentes com gráfico e tabela.
+:white_check_mark: CRUD Proponentes.
 
-## Live preview
+:white_check_mark: Desconto do INSS calculado automaticamente.
+
+:white_check_mark: Salário Líquido calculado automaticamente de forma assincrona com Sidekiq e Redis.
+
+:white_check_mark: Relatório de proponentes com gráfico e tabela.
+
+:black_square_button: Sistema de autenticação com Devise ( Work in Progress )
+
+:black_square_button: Design responsivo ( Work in Progress )
+
+## :point_down: Live preview :point_down:
 
 https://desconto-inss.onrender.com
 
-## Como executar localmente
+## :octocat: Como executar localmente :octocat:
 
-### Sem docker compose
+#### Sem docker compose
 
-#### Requisitos
+**Requisitos**
 
 - Ruby version: 3.3
 - Redis
@@ -46,9 +58,9 @@ rails s
 bundle exec sidekiq
 ```
 
-### Com docker compose
+#### Com docker compose
 
-#### Requisitos
+**Requisitos**
 
 - Docker
 - Docker Compose
@@ -60,7 +72,7 @@ bundle exec sidekiq
 docker compose up
 ```
 
-## Deployment
+## :cloud: Deployment :cloud:
 
 Dê um fork nesse repositorio e clique no botão abaixo para fazer o deploy no [Render](https://render.com/)
 
@@ -68,7 +80,7 @@ Dê um fork nesse repositorio e clique no botão abaixo para fazer o deploy no [
 
 Veja este guia https://docs.render.com/deploy-rails e este https://render.com/docs/deploy-sidekiq-worker pra mais informações.
 
-## Preview
+## :camera: Preview :camera:
 
 ![image](https://github.com/parkournick3/desconto-inss/assets/131922314/15fdfdce-97bb-4b01-b392-dd1d509d3050)
 ![image](https://github.com/parkournick3/desconto-inss/assets/131922314/89f89d34-431f-48e0-af20-8dc497051d01)
