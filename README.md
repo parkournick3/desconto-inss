@@ -15,6 +15,8 @@ WIP
 
 ## Como executar localmente
 
+### Sem docker compose
+
 #### Requisitos
 
 - Ruby version: 3.3
@@ -25,25 +27,36 @@ WIP
 #### Comandos
 
 ```bash
-# Execute os seguintes os comandos
+# 1 - Execute os seguintes os comandos
 bun install
 bun run build
 bundle install
 
-# Para executar o servidor
+# 2 - Preparar o banco de dados
+rails db:prepare
+
+# 3 - Para executar o servidor
 rails s
 
-# Para executar o sidekiq
+# 4 - Em outro terminal execute o sidekiq
 bundle exec sidekiq
 ```
 
-#### Com docker compose
+### Com docker compose
 
-Se prefirir, é possível rodar com docker compose.
+#### Requisitos
+
+- Docker
+- Docker Compose
 
 ```bash
+# 1 - Execute o postgres, api, redis e sidekiq
 docker compose up
 ```
+
+## Deploy
+
+WIP
 
 ## Preview
 
