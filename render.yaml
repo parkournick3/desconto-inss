@@ -1,0 +1,56 @@
+databases:
+  - name: desconto_inss
+    databaseName: desconto_inss_production
+    user: desconto_inss
+    plan: free
+
+services:
+  - type: redis
+    name: sidekiq-redis
+    plan: free
+    maxmemoryPolicy: noeviction
+    ipAllowList: []
+
+  # - type: worker # worker type is only available on paid instance types
+  #   name: sidekiq-worker
+  #   plan: free
+  #   buildCommand: bundle install
+  #   startCommand: bundle exec sidekiq
+  #   env: ruby
+  #   envVars:
+  #     - key: DATABASE_URL
+  #       fromDatabase:
+  #         name: desconto_inss
+  #         property: connectionString
+  #     - key: RAILS_MASTER_KEY
+  #       sync: false
+  #     - key: WEB_CONCURRENCY
+  #       value: 2 # sensible default
+  #     - key: REDIS_URL
+  #       fromService:
+  #         type: redis
+  #         name: sidekiq-redis
+  #         property: connectionString
+
+  - type: web
+    name: desconto_inss
+    runtime: ruby
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
+    # startCommand: "bundle exec rails server" # uncomment this line if you want to run sidekiq in the worker type
+    startCommand: bundle exec sidekiq & bundle exec rails server # start sidekiq and rails server
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: desconto_inss
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: 2 # sensible default
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: sidekiq-redis
+          property: connectionString

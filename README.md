@@ -15,7 +15,7 @@
 
 ## Live preview
 
-WIP
+https://desconto-inss.onrender.com
 
 ## Como executar localmente
 
@@ -60,9 +60,13 @@ bundle exec sidekiq
 docker compose up
 ```
 
-## Deploy
+## Deployment
 
-WIP
+Dê um fork nesse repositorio e clique no botão abaixo para fazer o deploy no [Render](https://render.com/)
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
+
+Veja este guia https://docs.render.com/deploy-rails e este https://render.com/docs/deploy-sidekiq-worker pra mais informações.
 
 ## Preview
 
