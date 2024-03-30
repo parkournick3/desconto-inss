@@ -11,7 +11,7 @@
 - CRUD Proponentes.
 - Desconto do INSS calculado automaticamente.
 - Salário Líquido calculado automaticamente de forma assincrona.
-- Relatório do proponentes com gráfico e tabela.
+- Relatório de proponentes com gráfico e tabela.
 
 ## Live preview
 
