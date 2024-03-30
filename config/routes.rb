@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'dashboard/index'
   resources :proponents
+
+  get '/', to: 'dashboard#index'
 
   get '/dashboard', to: 'dashboard#index'
 
