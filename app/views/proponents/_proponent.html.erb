@@ -7,14 +7,16 @@
     <td><%= number_to_currency(proponent.gross_salary) %></td>
     <td><%= number_to_currency(proponent.inss_discount) %></td>
     <td><%= number_to_currency(proponent.net_salary) %></td>
-    <td class="d-flex gap-2">
-      <%= button_to proponent_path(proponent), class: "btn btn-danger btn-sm", method: :delete do %>
-        <span class="sr-only">Excluir</span>
-      <% end %>
+    <td>
+      <div class="d-flex gap-2">
+        <%= button_to proponent_path(proponent), data: {turbo_method: :delete, turbo_confirm: 'Tem certeza que deseja excluir este proponente?'}, class: "btn btn-danger btn-sm", method: :delete do %>
+          <span class="sr-only">Excluir</span>
+        <% end %>
 
-      <%= link_to edit_proponent_path(proponent), class: "btn btn-primary btn-sm", data: { confirm: 'Are you sure you want to delete this record?' } do %>
-        <span class="sr-only">Editar</span>
-      <% end %>
+        <%= link_to edit_proponent_path(proponent), class: "btn btn-primary btn-sm" do %>
+          <span class="sr-only">Editar</span>
+        <% end %>
+      </div>
     </td>
   <% end %>
 </tr>
