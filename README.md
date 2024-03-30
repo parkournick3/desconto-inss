@@ -21,13 +21,15 @@
 
 :white_check_mark: Relatório de proponentes com gráfico e tabela.
 
-:black_square_button: Sistema de autenticação com Devise ( Work in Progress )
+:white_check_mark: Sistema de autenticação com Devise
 
 :black_square_button: Design responsivo ( Work in Progress )
 
 ## :point_down: Live preview :point_down:
 
 https://desconto-inss.onrender.com
+
+Entre com a conta email:_admin@admin_, senha:_admin123_ ou crie uma nova conta!
 
 ## :octocat: Como executar localmente :octocat:
 
