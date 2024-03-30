@@ -17,4 +17,11 @@
       <% end %>
     </tbody>
   </table>
+
+  <canvas
+  data-controller="chartjs"
+  data-chartjs-type-value=<%= @chart_type %>
+  data-chartjs-data-value="<%= @chart_data.to_json %>"
+  data-chartjs-options-value="<%= @chart_options.to_json %>">
+  </canvas>
 </div>
