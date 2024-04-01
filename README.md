@@ -28,6 +28,7 @@
 ## :point_down: Live preview :point_down:
 
 https://desconto-inss.onrender.com
+⚠️ ( a instancia que estou usando é free e quando você tentar acessar pode demorar cerca de 100 segundos pra ficar online )
 
 Entre com a conta email:_admin@admin_, senha:_admin123_ ou crie uma nova conta!
 
