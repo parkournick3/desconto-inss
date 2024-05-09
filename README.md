@@ -5,11 +5,10 @@
 ![image](https://github.com/parkournick3/desconto-inss/assets/131922314/4898f49a-f121-4716-bb9c-1455a5f6d2de)
 
 1. [Principais funcionalidades](https://github.com/parkournick3/desconto-inss?tab=readme-ov-file#point_down-funcionalidades-principais-point_down)
-2. [Live Preview](https://github.com/parkournick3/desconto-inss?tab=readme-ov-file#point_down-live-preview-point_down)
-3. [Como rodar localmente ( com e sem docker )](https://github.com/parkournick3/desconto-inss?tab=readme-ov-file#octocat-como-executar-localmente-octocat)
-4. [Deployment](https://github.com/parkournick3/desconto-inss?tab=readme-ov-file#cloud-deployment-cloud)
-5. [Preview](https://github.com/parkournick3/desconto-inss?tab=readme-ov-file#camera-preview-camera)
-6. ![Fonte do cálculo](https://www.gov.br/inss/pt-br/assuntos/confira-as-aliquotas-de-contribuicao-ao-inss-com-o-aumento-do-salario-minimo)
+2. [Como rodar localmente ( com e sem docker )](https://github.com/parkournick3/desconto-inss?tab=readme-ov-file#octocat-como-executar-localmente-octocat)
+3. [Deployment](https://github.com/parkournick3/desconto-inss?tab=readme-ov-file#cloud-deployment-cloud)
+4. [Preview](https://github.com/parkournick3/desconto-inss?tab=readme-ov-file#camera-preview-camera)
+5. ![Fonte do cálculo](https://www.gov.br/inss/pt-br/assuntos/confira-as-aliquotas-de-contribuicao-ao-inss-com-o-aumento-do-salario-minimo)
 
 ## :point_down: Funcionalidades principais :point_down:
 
@@ -24,13 +23,6 @@
 :white_check_mark: Sistema de autenticação com Devise
 
 :black_square_button: Design responsivo ( Work in Progress )
-
-## :point_down: Live preview :point_down:
-
-https://desconto-inss.onrender.com
-⚠️ ( a instancia que estou usando é free e quando você tentar acessar pode demorar cerca de 100 segundos pra ficar online )
-
-Entre com a conta email:_admin@admin_, senha:_admin123_ ou crie uma nova conta!
 
 ## :octocat: Como executar localmente :octocat:
 
